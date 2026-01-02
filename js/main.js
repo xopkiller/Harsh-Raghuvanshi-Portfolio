@@ -78,7 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     animate();
 
-    // Mouse-responsive parallax
-    document.addEventListener('mousemove', (e) => {
-        const mouseX = (e.clientX / window.innerWidth) - 0.5;
-        const mouse
+    //
