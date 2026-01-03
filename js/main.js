@@ -11,5 +11,15 @@ gsap.utils.toArray("section").forEach((section) => {
         y: 60,
         duration: 1,
         ease: "power3.out"
-    });
+        document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("mousemove", e => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    btn.style.transform = "translate(0,0)";
+  });
 });
