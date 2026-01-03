@@ -1,113 +1,133 @@
-/* GLOBAL STYLES */
+:root {
+  --bg: #050505;
+  --glass: rgba(255,255,255,.07);
+  --border: rgba(255,255,255,.15);
+  --text: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #4fffbd;
+}
+
+* { box-sizing: border-box; margin:0; padding:0 }
+
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0A0A0A;
-    color: #EEE;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #111, #000);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px 20px;
+a { text-decoration:none; color:inherit }
+
+/* Cursor */
+#cursor {
+  width:14px;height:14px;
+  background:var(--accent);
+  border-radius:50%;
+  position:fixed;
+  z-index:9999;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
 }
 
-/* Navbar */
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    backdrop-filter: blur(12px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 99;
+/* 3D Canvas */
+#bg {
+  position:fixed;
+  inset:0;
+  z-index:-1;
 }
 
-#navbar .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
+/* Navigation */
+nav {
+  position:fixed;
+  width:100%;
+  padding:20px 7vw;
+  display:flex;
+  justify-content:space-between;
+  backdrop-filter:blur(20px);
+  background:rgba(0,0,0,.4);
+  z-index:100;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
+.nav-links { display:flex; gap:28px }
 
-.nav-links a {
-    text-decoration: none;
-    color: #EEE;
-    font-size: 1rem;
-}
-
-/* Active */
-.nav-links a.active {
-    color: #4FFFBD;
-}
-
-/* SECTIONS */
+/* Sections */
 section {
-    padding: 120px 0;
+  min-height:100vh;
+  padding:140px 7vw;
 }
 
-h1, h2, h3 {
-    font-weight: 700;
-    text-transform: uppercase;
+h1 {
+  font-size:clamp(3rem,6vw,6rem);
+  line-height:1;
 }
 
-/* Policy */
-.policy-section p {
-    line-height: 1.7;
-    margin-top: 20px;
+p {
+  max-width:680px;
+  margin-top:20px;
+  color:var(--muted);
 }
 
-/* Collaboration Cards */
-.collab-section .collab-cards,
-.vision-section .vision-cards {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* Button */
+.btn {
+  display:inline-block;
+  margin-top:40px;
+  padding:14px 36px;
+  border-radius:40px;
+  background:var(--accent);
+  color:#000;
+  font-weight:600;
+  transition:.3s;
 }
 
+/* Grid */
+.grid {
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+}
+
+/* Card */
 .card {
-    background: rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 10px;
-    backdrop-filter: blur(8px);
-    transition: transform .3s ease, box-shadow .3s ease;
-    
+  position:relative;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  padding:32px;
+  border-radius:18px;
+  transition:.5s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.card i {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #4FFFBD;
+  transform:translateY(-14px) rotateX(5deg);
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
 }
 
 .card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  background: radial-gradient(circle at top left, #4fffbd33, transparent);
-  opacity: 0;
-  transition: opacity .4s;
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  background:radial-gradient(circle at top left,#4fffbd33,transparent);
+  opacity:0;
+  transition:.4s;
 }
-.card:hover::after { opacity: 1; }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 25px 0;
-    background: #0A0A0A;
-    color: #AAA;
-    font-size: .9rem;
+.card:hover::after { opacity:1 }
+
+/* Forms */
+input, textarea {
+  width:100%;
+  padding:14px;
+  margin-bottom:16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:#fff;
+}
+
+footer {
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
 }
