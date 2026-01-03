@@ -78,6 +78,7 @@ h1, h2, h3 {
     border-radius: 10px;
     backdrop-filter: blur(8px);
     transition: transform .3s ease, box-shadow .3s ease;
+    
 }
 
 .card:hover {
@@ -90,6 +91,17 @@ h1, h2, h3 {
     margin-bottom: 10px;
     color: #4FFFBD;
 }
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, #4fffbd33, transparent);
+  opacity: 0;
+  transition: opacity .4s;
+}
+.card:hover::after { opacity: 1; }
 
 /* Footer */
 .footer {
