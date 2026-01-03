@@ -1,67 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision & Bespoke Projects – Harsh Raghuvanshi</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Raghuvanshi</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">Harsh Raghuvanshi</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="vision-bespoke-projects.html" class="active">Vision & Projects</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Vision Section -->
-    <section class="vision-section">
-        <div class="container">
-            <h1>Vision & Bespoke Projects</h1>
-            <p>
-                My work goes beyond routine. It’s about crafting experiences that
-                connect, inspire, and elevate brands. Each bespoke project is built
-                with thoughtful strategy, sleek design, and impactful results.
-            </p>
+<canvas id="bg"></canvas>
+<div id="cursor"></div>
 
-            <div class="vision-cards">
-                <div class="card">
-                    <i class="fa-solid fa-eye"></i>
-                    <h3>Vision Led Design</h3>
-                    <p>
-                        I prioritize user engagement, brand impact, and long-term
-                        digital growth in every design decision.
-                    </p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-project-diagram"></i>
-                    <h3>Bespoke Experiences</h3>
-                    <p>
-                        Each project is tailored to the client’s goals and audience,
-                        ensuring uniqueness and performance.
-                    </p>
-                </div>
-                <div class="card">
-                    <i class="fa-solid fa-rocket"></i>
-                    <h3>Results-Driven Strategy</h3>
-                    <p>
-                        We build solutions with measurable outcomes — from traffic to
-                        conversions and business growth.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav>
+  <div class="logo">Harsh Raghuvanshi</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="tools.html">Tools</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<section>
+  <h1>Vision & Bespoke Projects</h1>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2026 Harsh Raghuvanshi. All rights reserved.</p>
-    </footer>
+  <div class="grid">
+    <div class="card">
+      <h3>Saint Stag – Social Media Marketing</h3>
+      <p>
+        Full social media strategy across Instagram, Facebook & LinkedIn.
+        Content calendars, visuals, analytics optimization.
+      </p>
+      <p>Result: Higher reach, engagement & conversions.</p>
+    </div>
+
+    <div class="card">
+      <h3>Buttar Associates – Web Development</h3>
+      <p>
+        Designed a modern, responsive website focused on usability,
+        performance & branding.
+      </p>
+      <p>Improved engagement and session duration.</p>
+    </div>
+
+    <div class="card">
+      <h3>Book Your Yacht Dubai – SEO</h3>
+      <p>
+        Complete SEO execution including keyword research,
+        on-page & technical SEO, backlink planning.
+      </p>
+      <p>Result: Traffic growth & ranking improvements.</p>
+    </div>
+  </div>
+</section>
+<script src="js/main.js"></script>
 </body>
 </html>
